@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1552.8,1561.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1552.8,1597.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GitHub_Web_NavigateTo_HomePage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -83,10 +83,11 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GitHub Web Login" sap:VirtualizedContainerService.HintSize="1563.2,1456.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow logs a user into the GitHub website.&#xD;&#xA;&#xD;&#xA;Throws an InvalidCredentialException if the username and password are invalid.&#xD;&#xA;Throws a SelectorNotFoundException if an unsupported/unknown UI element appears." DisplayName="GitHub Web Login" sap:VirtualizedContainerService.HintSize="1563.2,1532.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Edge: Sign in to GitHub · GitHub" sap:VirtualizedContainerService.HintSize="1521.6,1364" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="Simulate" OpenMode="Never" Version="V1">
@@ -125,7 +126,7 @@
               </uix:NClick>
             </Sequence>
             <Pick DisplayName="Pick - 2FA or incorrect credential" sap:VirtualizedContainerService.HintSize="1446.4,944" sap2010:WorkflowViewState.IdRef="Pick_1">
-              <PickBranch sap:VirtualizedContainerService.HintSize="424.8,897.6" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+              <PickBranch DisplayName="PickBranch - 2FA Popup" sap:VirtualizedContainerService.HintSize="424.8,897.6" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <PickBranch.Trigger>
                   <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Verify button" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
                     <ui:WaitUiElementAppear.Target>
@@ -157,7 +158,7 @@
                   </Assign>
                 </Sequence>
               </PickBranch>
-              <PickBranch sap:VirtualizedContainerService.HintSize="424.8,897.6" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <PickBranch DisplayName="PickBranch - Successful Login" sap:VirtualizedContainerService.HintSize="424.8,897.6" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <PickBranch.Trigger>
                   <Sequence sap:VirtualizedContainerService.HintSize="375.2,408.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
@@ -201,7 +202,7 @@
                   </Assign>
                 </Sequence>
               </PickBranch>
-              <PickBranch sap:VirtualizedContainerService.HintSize="383.2,897.6" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+              <PickBranch DisplayName="PickBranch - Failed login" sap:VirtualizedContainerService.HintSize="383.2,897.6" sap2010:WorkflowViewState.IdRef="PickBranch_3">
                 <PickBranch.Trigger>
                   <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element - Incorrect Credential error" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4" WaitVisible="True">
                     <ui:WaitUiElementAppear.Target>
