@@ -29,7 +29,12 @@
     "outputType": "Library",
     "libraryOptions": {
       "includeOriginalXaml": false,
-      "privateWorkflows": []
+      "privateWorkflows": [
+        "Tests/TestTemplate.xaml",
+        "Navigation/ActivityTemplateToUse.xaml",
+        "Authentication/ActivityTemplateToUse.xaml",
+        "Organizations/ActivityTemplateToUse.xaml"
+      ]
     },
     "processOptions": {
       "ignoredFiles": []
