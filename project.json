@@ -42,7 +42,12 @@
         "Tests/Organization/TestCreateOrganization.xaml",
         "Authentication/GitHub_Web_HandlePasswordConfirmation.xaml",
         "Tests/Authentication/TestRespondToConfirmPassword.xaml",
-        "Tests/Authentication/TestCheckLogin.xaml"
+        "Tests/Authentication/TestCheckLogin.xaml",
+        "Tests/AuthenticationTests/TestCheckLogin.xaml",
+        "Tests/AuthenticationTests/TestLoginAndLogout.xaml",
+        "Tests/AuthenticationTests/TestRespondToConfirmPassword.xaml",
+        "Tests/OrgTests/TestCreateOrganization.xaml",
+        "Tests/OrgTests/TestAddUserToOrg.xaml"
       ]
     },
     "processOptions": {
