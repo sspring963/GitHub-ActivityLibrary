@@ -40,7 +40,8 @@
         "Tests/NavTests/NavigateToHomeTest.xaml",
         "Tests/Authentication/TestLoginAndLogout.xaml",
         "Tests/Authentication/TestCheckLogin.xaml",
-        "Tests/Organization/TestCreateOrganization.xaml"
+        "Tests/Organization/TestCreateOrganization.xaml",
+        "Authentication/GitHub_Web_HandlePasswordConfirmation.xaml"
       ]
     },
     "processOptions": {
