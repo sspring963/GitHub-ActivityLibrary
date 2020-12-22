@@ -33,7 +33,14 @@
         "Tests/TestTemplate.xaml",
         "Navigation/ActivityTemplateToUse.xaml",
         "Authentication/ActivityTemplateToUse.xaml",
-        "Organizations/ActivityTemplateToUse.xaml"
+        "Organizations/ActivityTemplateToUse.xaml",
+        "Tests/NavTests/NavigateToOrgTest.xaml",
+        "Tests/NavTests/NavigateToOrgMembersTest.xaml",
+        "Tests/NavTests/NavigateToLoginTest.xaml",
+        "Tests/NavTests/NavigateToHomeTest.xaml",
+        "Tests/Authentication/TestLoginAndLogout.xaml",
+        "Tests/Authentication/TestCheckLogin.xaml",
+        "Tests/Organization/TestCreateOrganization.xaml"
       ]
     },
     "processOptions": {
