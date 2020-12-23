@@ -132,8 +132,8 @@
                 </uix:NClick.Target>
               </uix:NClick>
             </Sequence>
-            <Pick DisplayName="Pick - 2FA or incorrect credential" sap:VirtualizedContainerService.HintSize="1446.4,944" sap2010:WorkflowViewState.IdRef="Pick_1">
-              <PickBranch DisplayName="PickBranch - 2FA Popup" sap:VirtualizedContainerService.HintSize="424.8,897.6" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+            <Pick DisplayName="Pick - 2FA or incorrect credential" sap:VirtualizedContainerService.HintSize="1446.4,642.4" sap2010:WorkflowViewState.IdRef="Pick_1">
+              <PickBranch DisplayName="PickBranch - 2FA Popup" sap:VirtualizedContainerService.HintSize="424.8,596" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <PickBranch.Trigger>
                   <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Verify button" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
                     <ui:WaitUiElementAppear.Target>
@@ -165,32 +165,20 @@
                   </Assign>
                 </Sequence>
               </PickBranch>
-              <PickBranch DisplayName="PickBranch - Successful Login" sap:VirtualizedContainerService.HintSize="424.8,897.6" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <PickBranch DisplayName="PickBranch - Successful Login" sap:VirtualizedContainerService.HintSize="424.8,596" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <PickBranch.Trigger>
-                  <Sequence sap:VirtualizedContainerService.HintSize="375.2,408.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ClickType="Single" DisplayName="Click - Profile Dropdown" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://github.com/topics" DesignTimeRectangle="1810, 147, 48, 34" FriendlyName="'SUMMARY'" FullSelectorArgument="&lt;webctrl tag='SUMMARY' aria-label='View profile and more' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SUMMARY' aria-label='View profile and more' type='' aaname='                     ' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAmCAYAAACLZrh7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPFSURBVGhD7ZhNTxNBGMf9MF684MWDX8Fw8OBZE0XABANR7yqJxgAGQQ0HkOBLRDB6NHowUSkFpAUqLKVvW9oCYrvtyjd4nP/iDLPstN3ibtsYSH4JaZ95+c3OPPNsT5w81UL/E8dCzc6xULNTs1D7tS4aG5+g4Nw8ZTJZMk3TAv/jM3yHGFXbeuBK6PSZszTQN0QpLU3GVpGK2yUy8ybt7e3ZwGf4DjGIRRu0VfXpF1WFOi/0UHAwTGsjMUF0Ikm52W2HUC64Q9HnSVss2qIPVd9+UFGot7WfAm1hB/M3VijxLu0QSrzftL5TtUFfqjG8pqzQQOsT+nZxUUmwa4niU7pDKP42TXPXl5VtAPpUjeUlSiGspmpCnKMKgbvn+hzjeYlDCPsdW0RM4tIizVwJ0Wx7eJ+O/S0XY0LFnZKN+HSaFm6uWDE8PtAWsvrg/c1cDlHH+W7bmF5iE0JGwiGWhSCzdF+j2OsUewK6ReyNTtp4gn483qDI8AHaswTFJlnM9EFcZDC6LyUJBe599y372YSQZpGZZCGscmwyRUauaKVlkE8atPEyZU1UBhkunyiIuOJWifSPGZrtlBaICUUeRqn/wZBtIl5hE8Ld4RBi2werjQnys2Jki7TxKiViONEXSTIyRRFnFkza/JxjQksihgslI7ptIl4hhHC740Ksl1AhbfhSUQghlCy45XFp4tAjkwErAbCzgG0GEbCr5WmdnRdZBmijCfq59kvEFXSD9A8ZWrh10N9c97K1aBDHmPJkvEAIoQ7DU8iyCgCXJtIy4AkAZwZPBUAmfGfVIRS6vUraGIv9G4c266wt+uD9JVhqz3zZotJuyRpTnozM8NMRcvuHWN5OCKG45FtFBukYGUzOVG7B9gr3rllPXtU3xuTjq3AjJcsAIYSKWTWon0IYU56MikpSh2VA0wsBlZRKBjT1lpORpcrJAEdSwCsAqmbUZRZTaasCwKWJtFwTrA0SCPrg/SHhZL5WTwoqIFJJBgghkbbZJJCqUWQC1GYoZ1ABINXWQj7F03ZE9DffU6e0XcvF6paGXqzAbenjloaWPqBsccouRhSapvHbmqQrWCwSiv4p27jiVPX6gOwWeRRlVXPWWu1agIw2GqfAVbtQ3V4fgOoFD1JYZWyd2mCLA5lGveBxqr2C/wt1fwXnVPqR5Kg07EcSDlYTW8QL/H4ynIpCAPsdhxiZ6SigrZ9n5jBVhQAyEtIs7g5ciG5ALNr4lc3K4UpIBrc7ShbUYSguUTED/I/P8J0fFYBbahZqdo6FmpsW+gPPucOSvE+5hgAAAABJRU5ErkJggg==" InformativeScreenshot="c0dd7c690538d8b71f685cec9d4178f0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Topics on GitHub' /&gt;" SearchSteps="FuzzySelector, Image" />
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                    <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element - &quot;Signed in as *&quot; element" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2" WaitVisible="False">
-                      <ui:WaitUiElementAppear.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6c489203-133d-402e-9def-41447f9a3835" InformativeScreenshot="4094f1d51298fbd7746405faa71da3b7" Selector="&lt;webctrl aaname='Signed in as *' aria-role='menuitem' tag='A' /&gt;">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
-                        </ui:Target>
-                      </ui:WaitUiElementAppear.Target>
-                    </ui:WaitUiElementAppear>
-                  </Sequence>
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Profile Dropdown" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
+                    <ui:WaitUiElementAppear.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea012106-4d09-4506-85b6-80fa11b1b653" InformativeScreenshot="e7fe8e0ade7e57143d8d1822b4a3b8de" Selector="&lt;webctrl tag='SUMMARY' aria-label='View profile and more' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:WaitUiElementAppear.Target>
+                  </ui:WaitUiElementAppear>
                 </PickBranch.Trigger>
                 <Sequence sap:VirtualizedContainerService.HintSize="375.2,288.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -198,7 +186,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Successful login.&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Successful login, no 2FA popup.&quot;]" />
                   <Assign DisplayName="Assign - 2FA did not appear" sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_6">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[out_2FADidAppear]</OutArgument>
@@ -209,7 +197,7 @@
                   </Assign>
                 </Sequence>
               </PickBranch>
-              <PickBranch DisplayName="PickBranch - Failed login" sap:VirtualizedContainerService.HintSize="383.2,897.6" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+              <PickBranch DisplayName="PickBranch - Failed login" sap:VirtualizedContainerService.HintSize="383.2,596" sap2010:WorkflowViewState.IdRef="PickBranch_3">
                 <PickBranch.Trigger>
                   <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element - Incorrect Credential error" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4" WaitVisible="True">
                     <ui:WaitUiElementAppear.Target>
