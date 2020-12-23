@@ -10,7 +10,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.10.2.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "0.1.3-alpha",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -33,7 +33,21 @@
         "Tests/TestTemplate.xaml",
         "Navigation/ActivityTemplateToUse.xaml",
         "Authentication/ActivityTemplateToUse.xaml",
-        "Organizations/ActivityTemplateToUse.xaml"
+        "Organizations/ActivityTemplateToUse.xaml",
+        "Tests/NavTests/NavigateToOrgTest.xaml",
+        "Tests/NavTests/NavigateToOrgMembersTest.xaml",
+        "Tests/NavTests/NavigateToLoginTest.xaml",
+        "Tests/NavTests/NavigateToHomeTest.xaml",
+        "Tests/Authentication/TestLoginAndLogout.xaml",
+        "Tests/Organization/TestCreateOrganization.xaml",
+        "Authentication/GitHub_Web_HandlePasswordConfirmation.xaml",
+        "Tests/Authentication/TestRespondToConfirmPassword.xaml",
+        "Tests/Authentication/TestCheckLogin.xaml",
+        "Tests/AuthenticationTests/TestCheckLogin.xaml",
+        "Tests/AuthenticationTests/TestLoginAndLogout.xaml",
+        "Tests/AuthenticationTests/TestRespondToConfirmPassword.xaml",
+        "Tests/OrgTests/TestCreateOrganization.xaml",
+        "Tests/OrgTests/TestAddUserToOrg.xaml"
       ]
     },
     "processOptions": {
