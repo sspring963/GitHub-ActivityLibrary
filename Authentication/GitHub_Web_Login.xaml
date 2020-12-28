@@ -1,9 +1,9 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="GitHub_Web_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
-    <x:Property Name="in_Password" Type="InArgument(ss:SecureString)" />
-    <x:Property Name="in_Username" Type="InArgument(x:String)" />
-    <x:Property Name="out_2FADidAppear" Type="OutArgument(x:Boolean)" />
+    <x:Property sap2010:Annotation.AnnotationText="The browser window being used." Name="in_Browser" Type="InArgument(ui:UiElement)" />
+    <x:Property sap2010:Annotation.AnnotationText="The password to the GitHub account." Name="in_Password" Type="InArgument(ss:SecureString)" />
+    <x:Property sap2010:Annotation.AnnotationText="The username for the GitHub account." Name="in_Username" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Set to True if 2FA prompt appears." Name="out_2FADidAppear" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <this:GitHub_Web_Login.in_Browser>
     <InArgument x:TypeArguments="ui:UiElement" />
@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1552.8,1790.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1697,2331</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GitHub_Web_NavigateTo_HomePage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -83,59 +83,58 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow logs a user into the GitHub website.&#xA;&#xA;Throws an InvalidCredentialException if the username and password are invalid.&#xA;Throws a SelectorNotFoundException if an unsupported/unknown UI element appears." DisplayName="GitHub Web Login" sap:VirtualizedContainerService.HintSize="1563.2,1685.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow logs a user into the GitHub website.&#xA;&#xA;Throws an InvalidCredentialException if the username and password are invalid.&#xA;Throws a SelectorNotFoundException if an unsupported/unknown UI element appears." DisplayName="GitHub Web Login" sap:VirtualizedContainerService.HintSize="1568,2226" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Edge: Sign in to GitHub · GitHub" sap:VirtualizedContainerService.HintSize="1521.6,1516.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="Simulate" OpenMode="Never" Version="V1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1526,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Logging into GitHub&quot;]" />
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Edge: Sign in to GitHub · GitHub" sap:VirtualizedContainerService.HintSize="1526,1931" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="Simulate" OpenMode="Never" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do in browser" sap:VirtualizedContainerService.HintSize="1488,1300" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do in browser" sap:VirtualizedContainerService.HintSize="1492,1715" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GitHub_Web_NavigateTo_Login workflow" sap:VirtualizedContainerService.HintSize="1446.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Navigation\GitHub_Web_NavigateTo_Login.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GitHub_Web_NavigateTo_Login workflow" sap:VirtualizedContainerService.HintSize="1450,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Navigation\GitHub_Web_NavigateTo_Login.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Browser">
-                  <mva:VisualBasicValue x:TypeArguments="ui:UiElement" ExpressionText="in_Browser" />
-                </InArgument>
+                <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Browser">[in_Browser]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <Sequence DisplayName="Do login inputs" sap:VirtualizedContainerService.HintSize="1446.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Do login inputs" sap:VirtualizedContainerService.HintSize="1450,792" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'INPUT  login_field'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[in_Username]">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Username field" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="[in_Username]">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://github.com/login" DesignTimeRectangle="772, 426, 399, 48" ElementType="InputBox" FriendlyName="'INPUT  login_field'" FullSelectorArgument="&lt;webctrl id='login_field' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='login_field' tag='INPUT' type='text' aaname='     Username or email address   ' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZMAAAA0CAYAAABPctWDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKWSURBVHhe7ds/SiNhAMbhwIKXsN1mCxe8gadZL2BjJdimzTWstdETLIIIKwFlxUoRZAsV/yDf8mYnmjhJdPmwMc8Db+XEcn58M0nn9u6hZAdnN2Xr5x8zM7N3Ld0YNmQQk/3fQmJmZv+/9GMQk1knkvWti7LSPS2La/2ysHpUvvz4ZWZmc7Lc93P/TwfSg0mdyNKRzqQ/dLcvy9LGcVnePCm9vavSP78vj08FgDmS+37u/+lAepAupA+TutGKSeqTGvV2r5p/BwBl0IX0YdIpZSwmKU4u3Dm8bj4KAC/Sh3Ti9QllLCY5wjiRADBLOpFejPbjOSY5tuSZGAC8Jb0Yfdz1HJO8rc9LFgB4S3qRbrRikq9/5a09ALwlvUg3WjHJCxVf/wXgPdKLdKMVk/xABQDeK9340Jh8/fZ9MAA+LzEBoJqYAFBNTACoJiYAVBMTAKqJCQDVxASAamICQDUxAaCamABQTUwAqCYmAFQTEwCqiQkA1cQEgGpiAkA1MQGgmpgAUE1MAKgmJgBUExMAqokJANXEBIBqYgJANTEBoJqYAFBNTACo9uExAeDzmxiThdWj8vjUXAEAM6QX6UYrJotr/dI/v28uA4Dp0ot0oxWTle5p6e1dNZcBwHTpRbrRisn61kVZ3jxpLgOA6dKLdKMVk2xp47j0dp1OAJgunUgvRvsxFpPu9uXghcrO4XXzEQB4kT6kE+nFaD/GYpLl2JILnVAAGJUupA+jj7eGa8UkS3FyhMkzsbxkyVt7XxsGmC+57+f+nw6kB+nC6xPJcJ2Ds5uJf8hSn7ytz9e/UqP8QMXMzOZjue/n/p8OTDqNDJeOdG7vHsr+7+lBMTMzm7b0Ix0ZxCSbdUIxMzN7vXTjX0Meyl8RwoUKO6er/QAAAABJRU5ErkJggg==" InformativeScreenshot="17a9715e6167c4253fde3bce5e09cbdd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Sign in to GitHub · GitHub' /&gt;" SearchSteps="Selector" />
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'INPUT  password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" SecureText="[in_Password]">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Password field" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,226" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" SecureText="[in_Password]">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://github.com/login" DesignTimeRectangle="772, 538, 399, 48" ElementType="InputBoxPassword" FriendlyName="'INPUT  password'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' aaname='     Password Forgot password?   ' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZMAAAA0CAYAAABPctWDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJOSURBVHhe7dvRUtpQGIXRvv9bVqs2Co4FUYTika2hggnUmf+StWb2jQYv881J8MfTctXMzMwqExMzMyvvZEweZovW3d23y+vbdnHVtZ+/fpuZ2Zks9/3c/9OB9GCsE7uNxmQ2f2o33XS7Sfsze9z+bNleViszMzuz5f6fDqQH6UL6MNaNQUxSn9QoH84fWq3Xbb3d383GzMzObLn/pwPpQbqQPoydUg5ikuLkwvnj4v3Dm+0fAoD0IF1IH9KJryeUg5jkCJPypEQA8FX68PHYazoekxxb8kxMSAA4JZ1IL/Yfd/2LSd7Wpzavr6/95QAwlE6kF+nGICb5+tfzy0t/KQAcl16kG4OY5IWKUwkA35FepBuDmOQfVADgu9INMQGgREwAKBMTAMrEBIAyMQGgTEwAKBMTAMrEBIAyMQGgTEwAKBMTAMrEBIAyMQGgTEwAKBMTAMrEBIAyMQGgTEwAKBMTAMrEBIAyMQGgTEwAKBMTAMrEBIAyMQGgTEwAKBMTAMrEBIAyMQGgbDQmF1dd/2sA+L90YxCTy+vbtlqv+0sA4Lj0It0YxKS7u2+z+aK/DACOSy/SjUFMHmaLdtNN+ssA4Lj0It0YxCS76aZOJwCclE6kF/v9OIjJbP70/kLl+XnZfwQAPqUP6UR6sd+Pg5hkObZ8XOiEAsCndCF92H+8tdsgJlmKkyNMnonlw77lBXCecv//eKw16V+FHJ5IdhuNyW6pT97W5+tfqVH+QcXMzM5jue/n/p8OjJ1G9ncyJmZmZt+ZmJiZWXGr9gZmymyKHIAtOQAAAABJRU5ErkJggg==" InformativeScreenshot="3466dadbc56207548e5deb7612750026.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Sign in to GitHub · GitHub' /&gt;" SearchSteps="Selector" />
                 </uix:NTypeInto.Target>
               </uix:NTypeInto>
-              <uix:NClick ClickType="Single" DisplayName="Click 'Sign in'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick ClickType="Single" DisplayName="Click Sign In Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://github.com/login" DesignTimeRectangle="772, 616, 399, 48" ElementType="Button" FriendlyName="'Sign in'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='Sign in' check:text='Sign in' /&gt;" ImageBase64="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" InformativeScreenshot="c707fe78dad0550627a7cfc445a98eff.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Sign in to GitHub · GitHub' /&gt;" SearchSteps="Selector" Text="Sign in" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='INPUT' type='submit' /&gt;" />
                 </uix:NClick.Target>
               </uix:NClick>
             </Sequence>
-            <Pick DisplayName="Pick - 2FA or incorrect credential" sap:VirtualizedContainerService.HintSize="1446.4,642.4" sap2010:WorkflowViewState.IdRef="Pick_1">
-              <PickBranch DisplayName="PickBranch - 2FA Popup" sap:VirtualizedContainerService.HintSize="424.8,596" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+            <Pick DisplayName="Pick - 2FA or incorrect credential" sap:VirtualizedContainerService.HintSize="1450,637" sap2010:WorkflowViewState.IdRef="Pick_1">
+              <PickBranch DisplayName="PickBranch - 2FA Popup" sap:VirtualizedContainerService.HintSize="426,591" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <PickBranch.Trigger>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Verify button" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Verify button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e9621a89-ce32-4216-84e6-b525ead89927" InformativeScreenshot="2e2f0486aea0acca4c3abd431ac53113" Selector="&lt;webctrl aaname='Verify' tag='BUTTON' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -148,13 +147,13 @@
                     </ui:WaitUiElementAppear.Target>
                   </ui:WaitUiElementAppear>
                 </PickBranch.Trigger>
-                <Sequence sap:VirtualizedContainerService.HintSize="375.2,288.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,287" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;2FA appeared.&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;2FA appeared.&quot;]" />
                   <Assign DisplayName="Assign - 2FA did appear" sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_5">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[out_2FADidAppear]</OutArgument>
@@ -165,9 +164,9 @@
                   </Assign>
                 </Sequence>
               </PickBranch>
-              <PickBranch DisplayName="PickBranch - Successful Login" sap:VirtualizedContainerService.HintSize="424.8,596" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <PickBranch DisplayName="PickBranch - Successful Login" sap:VirtualizedContainerService.HintSize="426,591" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <PickBranch.Trigger>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Profile Dropdown" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element - Profile Dropdown" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ea012106-4d09-4506-85b6-80fa11b1b653" InformativeScreenshot="e7fe8e0ade7e57143d8d1822b4a3b8de" Selector="&lt;webctrl tag='SUMMARY' aria-label='View profile and more' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -180,13 +179,13 @@
                     </ui:WaitUiElementAppear.Target>
                   </ui:WaitUiElementAppear>
                 </PickBranch.Trigger>
-                <Sequence sap:VirtualizedContainerService.HintSize="375.2,288.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,287" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Successful login, no 2FA popup.&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Successful login, no 2FA popup.&quot;]" />
                   <Assign DisplayName="Assign - 2FA did not appear" sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_6">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[out_2FADidAppear]</OutArgument>
@@ -197,9 +196,9 @@
                   </Assign>
                 </Sequence>
               </PickBranch>
-              <PickBranch DisplayName="PickBranch - Failed login" sap:VirtualizedContainerService.HintSize="383.2,596" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+              <PickBranch DisplayName="PickBranch - Failed login" sap:VirtualizedContainerService.HintSize="384,591" sap2010:WorkflowViewState.IdRef="PickBranch_3">
                 <PickBranch.Trigger>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element - Incorrect Credential error" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4" WaitVisible="True">
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element - Incorrect Credential error" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4" WaitVisible="True">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="62381f06-615e-43a3-95ca-ba41c4eee93e" InformativeScreenshot="73a92eedb93d6b8ba10ae12fbc6128cb" Selector="&lt;webctrl tag='DIV' aaname='*Incorrect username or password*' parentclass='*flash-error*' /&gt;">
                         <ui:Target.TimeoutMS>
