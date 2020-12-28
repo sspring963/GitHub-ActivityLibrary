@@ -1,7 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="GitHub_Activity_Template" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
-    <x:Property Name="in_OrgName" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="The browser window being used for navigation." Name="in_Browser" Type="InArgument(ui:UiElement)" />
+    <x:Property sap2010:Annotation.AnnotationText="The name of the GitHub organization you are navigating to." Name="in_OrgName" Type="InArgument(x:String)" />
   </x:Members>
   <this:GitHub_Activity_Template.in_Browser>
     <InArgument x:TypeArguments="ui:UiElement" />
@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1164.8,970</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1697,957</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GitHub_Web_NavigateTo_HomePage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -77,20 +77,20 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Navigates the passed in browser to the passed in github organizations list of members" DisplayName="GitHub Navigate to Member List Activity" sap:VirtualizedContainerService.HintSize="696.4,864.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Navigates the passed in browser to the passed in github organizations list of members" DisplayName="GitHub Navigate to Member List Activity" sap:VirtualizedContainerService.HintSize="697,852" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Application/Browser passed as in argument" sap:VirtualizedContainerService.HintSize="654.4,741.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="Simulate" OpenMode="Never" Version="V1">
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Application/Browser passed as in argument" sap:VirtualizedContainerService.HintSize="655,729" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="Simulate" OpenMode="Never" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Workflow that navigates the browser to the specified Github organizations list of members" DisplayName="Do - Navigate to Github Organization Member List" sap:VirtualizedContainerService.HintSize="620.4,563.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence sap2010:Annotation.AnnotationText="Workflow that navigates the browser to the specified Github organizations list of members" DisplayName="Do - Navigate to Github Organization Member List" sap:VirtualizedContainerService.HintSize="621,553" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="OrgNameSpaceExists" />
             </Sequence.Variables>
@@ -100,14 +100,14 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:IsMatch sap2010:Annotation.AnnotationText="Generates boolean to see if the org name argument contains any spaces" BuilderPattern="\s" DisplayName="Is Match - No Whitespace Regex" sap:VirtualizedContainerService.HintSize="578.4,104" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[in_OrgName]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;WHITESP&quot;,&quot;OperationName&quot;:&quot;Whitespace&quot;,&quot;OperationValue&quot;:&quot;\\s&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="\s" RegexOption="IgnoreCase" Result="[OrgNameSpaceExists]">
+            <ui:IsMatch sap2010:Annotation.AnnotationText="Generates boolean to see if the org name argument contains any spaces" BuilderPattern="\s" DisplayName="Is Match - No Whitespace Regex" sap:VirtualizedContainerService.HintSize="579,101" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[in_OrgName]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;WHITESP&quot;,&quot;OperationName&quot;:&quot;Whitespace&quot;,&quot;OperationValue&quot;:&quot;\\s&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="\s" RegexOption="IgnoreCase" Result="[OrgNameSpaceExists]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:IsMatch>
-            <If sap2010:Annotation.AnnotationText="Uses the boolean from the regex activity above to make sure that the organization name does not include any spaces and then either throw an exception, or navigate to the specified Github organization list of members" Condition="[OrgNameSpaceExists]" DisplayName="If - Makes sure that organization name does not include any spaces" sap:VirtualizedContainerService.HintSize="578.4,294.4" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap2010:Annotation.AnnotationText="Uses the boolean from the regex activity above to make sure that the organization name does not include any spaces and then either throw an exception, or navigate to the specified Github organization list of members" Condition="[OrgNameSpaceExists]" DisplayName="If - Makes sure that organization name does not include any spaces" sap:VirtualizedContainerService.HintSize="579,287" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -117,7 +117,7 @@
                 <Throw DisplayName="Throw - Validation Exception" Exception="[new ValidationException(&quot;Error, Github organization name should not contain any whitespace&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
               </If.Then>
               <If.Else>
-                <uix:NGoToUrl DisplayName="Go To URL - Organization Member List" sap:VirtualizedContainerService.HintSize="334,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[&quot;https://github.com/orgs/&quot; + in_OrgName + &quot;/people&quot;]" />
+                <uix:NGoToUrl DisplayName="Go To URL - Organization Member List" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[&quot;https://github.com/orgs/&quot; + in_OrgName + &quot;/people&quot;]" />
               </If.Else>
             </If>
           </Sequence>

@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="GitHub_Activity_Template" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_Browser" Type="InArgument(ui:UiElement)" />
+    <x:Property sap2010:Annotation.AnnotationText="The browser window being used." Name="in_Browser" Type="InArgument(ui:UiElement)" />
   </x:Members>
   <this:GitHub_Activity_Template.in_Browser>
     <InArgument x:TypeArguments="ui:UiElement" />
@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>804.8,829.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1697,956</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GitHub_Web_NavigateTo_HomePage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -42,7 +42,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -63,29 +63,37 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow logs a user out of the GitHub website if they are already logged in." DisplayName="GitHub Web Logout" sap:VirtualizedContainerService.HintSize="475.2,724.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow logs a user out of the GitHub website if they are already logged in." DisplayName="GitHub Web Logout" sap:VirtualizedContainerService.HintSize="476,851" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Edge: Sign out?" sap:VirtualizedContainerService.HintSize="433.6,600.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="Simulate" OpenMode="Never" Version="V1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Logging out of GitHub&quot;]" />
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Edge: Sign out?" sap:VirtualizedContainerService.HintSize="434,597" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Browser]" InteractionMode="Simulate" OpenMode="Never" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,384" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,381" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGoToUrl DisplayName="Go To Logout URL" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://github.com/logout" />
-            <uix:NClick ClickType="Single" ContinueOnError="True" DisplayName="Click 'Sign out'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+            <uix:NGoToUrl DisplayName="Go To Logout URL" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://github.com/logout" />
+            <uix:NClick ClickType="Single" ContinueOnError="True" DisplayName="Click Sign Out Button" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://github.com/logout" DesignTimeRectangle="754, 493, 435, 81" ElementType="Button" FriendlyName="'Sign out'" FullSelectorArgument="&lt;webctrl tag='INPUT' aaname='Sign out' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='Sign out' check:text='Sign out' /&gt;" ImageBase64="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" InformativeScreenshot="46e76762337efba4c4dccf29fb8a0e40.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Sign out?' /&gt;" SearchSteps="Selector" Text="Sign out" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='INPUT' type='submit' /&gt;" />
               </uix:NClick.Target>
